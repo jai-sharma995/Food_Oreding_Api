@@ -214,7 +214,7 @@ footer span {
 	</section>
 
 	<script>
-fetch('http://localhost:8182/all')
+fetch('/all')
   .then(res => {
       if (!res.ok) {
           throw new Error("HTTP error " + res.status);
@@ -230,13 +230,13 @@ fetch('http://localhost:8182/all')
       data.forEach(item => {
           foodList.innerHTML += `
             <div class="food-card">
-                <img src="http://localhost:8182${item.image}" alt="${item.name}">
+                <img src="${item.image}" alt="${item.name}">
                 <div class="content">
                     <h3>${item.name}</h3>
                     <p>${item.restaurantsName}</p>
                     <p>${item.category}</p>
                     <button>₹ ${item.MRP}</button>
-                    <a href="http://localhost:8080/userDetails" class="order-btn">
+                    <a href="/userDetails" class="order-btn">
                     Order Now
                 </a>
                 </div>
