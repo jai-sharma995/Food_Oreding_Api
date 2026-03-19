@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Menu</title>
+</head>
+<body>
+
+<h2>My Menu Items</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Restaurant</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>MRP</th>
+        <th>Image</th>
+    </tr>
+
+    <tr th:each="m : ${menuList}">
+        <td th:text="${m.restaurantsName}"></td>
+        <td th:text="${m.name}"></td>
+        <td th:text="${m.category}"></td>
+
+        <!-- Java field name should be mrp, not MRP -->
+        <td th:text="${m.MRP}"></td>
+
+        <td>
+            <img th:src="@{${m.image}}" width="70">
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
