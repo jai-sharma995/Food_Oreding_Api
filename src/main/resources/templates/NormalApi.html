@@ -146,7 +146,7 @@ footer span {
     <h1>Foodies</h1>
     <nav>
         <a href="#">Home</a>
-        <a href="http://localhost:8080/Buttonmenu">Menu</a>
+        <a href="/Buttonmenu">Menu</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
     </nav>
@@ -158,7 +158,7 @@ footer span {
 </section>
 
 <script>
-fetch('http://localhost:8080/all')
+fetch('/all')
 .then(res => res.json())
 .then(data => {
 
@@ -168,7 +168,7 @@ fetch('http://localhost:8080/all')
     data.forEach(item => {
         foodList.innerHTML += `
         <div class="food-card">
-            <img src="http://localhost:8080${item.image}" alt="${item.name}">
+            <img src="${item.image}" alt="${item.name}">
             <div class="content">
                 <h3>${item.name}</h3>
                 <p>${item.restaurantsName}</p>
@@ -176,7 +176,7 @@ fetch('http://localhost:8080/all')
 
                 <div class="card-footer">
                     <span class="price">₹ ${item.MRP}</span>
-                    <a href="http://localhost:8080/userDetails" class="order-btn">
+                    <a href="/userDetails" class="order-btn">
                         Order Now
                     </a>
                 </div>

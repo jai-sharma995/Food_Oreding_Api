@@ -4,103 +4,135 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.security.Principal;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ar.SpringbootTesingApplication;
 import com.ar.entity.Menu;
 import com.ar.service.MenuService;
 
 import jakarta.servlet.http.HttpSession;
 
-
 @Controller
 public class MenuController {
 
-	@Autowired
-	private MenuService menuService;
+    @Autowired
+    private MenuService menuService;
 
-	public MenuController(MenuService menuService) {
-		super();
-		this.menuService = menuService;
+    // 👉 ADD MENU PAGE
+    @GetMapping("/add")
+    public String addMenuPage(Model model) {
+        model.addAttribute("menu", new Menu());
+        return "addMenu";
+    }
 
-	}
+    // 👉 SAVE MENU (IMAGE + DATA)
+    @PostMapping("/addMenu")
+    public String saveMenu(@ModelAttribute Menu menu,
+                           @RequestParam("imageFile") MultipartFile imageFile,
+                           HttpSession session) throws IOException {
 
-	@GetMapping("/add")
-	public String addMenuPage(Model model) {
-		model.addAttribute("menu", new Menu());
-		return "addMenu";
-	}
+        // 🔹 Session se restaurant name lo
+        String restaurantName = (String) session.getAttribute("restaurantName");
 
-	// SAVE MENU (restaurant auto mapped)
-	@PostMapping("/addMenu")
-	public String saveMenu(@ModelAttribute Menu menu,
-	                       @RequestParam("imageFile") MultipartFile imageFile,
-	                       HttpSession session) throws IOException {
+        if (restaurantName == null) {
+            return "redirect:/login";
+        }
 
-	    // ✅ Session se restaurant name uthao
-	    String restaurantName = (String) session.getAttribute("restaurantName");
+        menu.setRestaurantsName(restaurantName);
 
-	    // safety check
-	    if (restaurantName == null) {
-	        return "redirect:/login";
-	    }
+        // 🔥 IMAGE UPLOAD FIX
+        if (!imageFile.isEmpty()) {
 
-	   
-	    menu.setRestaurantsName(restaurantName);
+            String fileName = System.currentTimeMillis() + "_" + imageFile.getOriginalFilename();
 
-	   
-	    if (!imageFile.isEmpty()) {
-	        String fileName = System.currentTimeMillis() + "_" + imageFile.getOriginalFilename();
-	        Path path = Paths.get("src/main/resources/static/uploads/" + fileName);
-	        Files.createDirectories(path.getParent()); // important
-	        Files.write(path, imageFile.getBytes());
-	        menu.setImage("/uploads/" + fileName);
-	    }
+            // 👉 Project root uploads folder
+            String uploadDir = System.getProperty("user.dir") + "/uploads/";
 
-	   
-	    menuService.saveMenu(menu);
+            Path uploadPath = Paths.get(uploadDir);
 
-	  
-	    return "redirect:/list";
-	}
+            // folder create agar nahi hai
+            if (!Files.exists(uploadPath)) {
+                Files.createDirectories(uploadPath);
+            }
 
-	
-	@GetMapping("/list")
+            // file save
+            Path filePath = uploadPath.resolve(fileName);
+            Files.write(filePath, imageFile.getBytes());
+
+            // DB me path save
+            menu.setImage("/uploads/" + fileName);
+        }
+
+        menuService.saveMenu(menu);
+
+        return "redirect:/list";
+    }
+
+    // 👉 MENU LIST (Thymeleaf)
+    @GetMapping("/list")
     public String menuList(Model model, HttpSession session) {
 
-		 String restaurantName = (String) session.getAttribute("restaurantName");
-        
+        String restaurantName = (String) session.getAttribute("restaurantName");
+
         model.addAttribute(
-            "menuList",
-            menuService.getMenuByRestaurant(restaurantName)
+                "menuList",
+                menuService.getMenuByRestaurant(restaurantName)
         );
 
         return "menuList";
     }
-	
-	
-	
-	@GetMapping("/menu")
+
+    // 👉 FRONT PAGE
+    @GetMapping("/")
     public String menuPage() {
-        return "foodlist";   
+        return "foodlist";
     }
 
-	@GetMapping("/Buttonmenu")
-    public String menufache() {
-        return "NormalApi";   
+    // 👉 API PAGE
+    @GetMapping("/Buttonmenu")
+    public String menuApiPage() {
+        return "NormalApi";
+    }
+    
+    @GetMapping("/MenuButton")
+    public String MenuButton() {
+        return "MenuButton.html";
+    }
+    
+    @GetMapping("/AboutPage")
+    public String AboutPage() {
+        return "AboutPage.html";
+    }
+    
+    @GetMapping("/ContactPage")
+    public String ContactPage() {
+        return "ContactPage.html";
+    }
+    
+    @GetMapping("/editMenu/{id}")
+    public String editPage(@PathVariable int id, Model model) {
+    	Menu menu =menuService.getById(id);
+        model.addAttribute("menu", menu);
+        return "EditMenuPage";
     }
 
-	
-	
+    @PostMapping("/updateMenu")
+    public String updateMenu(@ModelAttribute Menu menu) {
+        menuService.Update(menu);
+        return "redirect:/list";
+    }
+
+    @GetMapping("/deleteMenu/{id}")
+    public String deleteMenu(@PathVariable int id) {
+        menuService.delete(id);
+        return "redirect:/list";
+    }
+    
+   
+    
 }

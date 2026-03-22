@@ -18,7 +18,7 @@ public class LoginController {
     @Autowired
     private RestaurantRepository restaurantRepo;
 
-    @GetMapping("/")
+    @GetMapping("/loginn")
     public String loginPage() {
         return "login";
     }
@@ -45,5 +45,9 @@ public class LoginController {
 
         return "redirect:/add";
     }
+    
+    
+    
+    
 }
 

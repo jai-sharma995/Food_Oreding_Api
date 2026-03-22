@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - FoodWala Private Limited</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fff8f2, #ffe8d9, #fffdfb);
+      color: #222;
+    }
+
+    .navbar {
+      width: 100%;
+      padding: 18px 60px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+      color: #ff5a1f;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 24px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff5a1f;
+    }
+
+    .hero {
+      min-height: 62vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.45)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      animation: fadeUp 1s ease;
+    }
+
+    .hero-content h1 {
+      font-size: 54px;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .hero-content p {
+      font-size: 19px;
+      line-height: 1.7;
+      opacity: 0.96;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 70px auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: #222;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 45px;
+      font-size: 18px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 30px 25px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      transition: 0.35s ease;
+      border-top: 5px solid #ff5a1f;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.13);
+    }
+
+    .contact-card .icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff6b35, #ff9f1c);
+      color: white;
+      font-size: 28px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 18px rgba(255, 107, 53, 0.30);
+    }
+
+    .contact-card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .contact-card p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .contact-card a {
+      text-decoration: none;
+      color: #ff5a1f;
+      font-weight: 700;
+      word-break: break-word;
+      transition: 0.3s ease;
+    }
+
+    .contact-card a:hover {
+      color: #d9470f;
+      text-decoration: underline;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .contact-form-box,
+    .support-box {
+      background: #fff;
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-form-box h2,
+    .support-box h2 {
+      color: #ff5a1f;
+      margin-bottom: 12px;
+      font-size: 30px;
+    }
+
+    .contact-form-box p,
+    .support-box p {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid #ddd;
+      outline: none;
+      font-size: 15px;
+      transition: 0.3s ease;
+      background: #fffdfa;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #ff5a1f;
+      box-shadow: 0 0 0 4px rgba(255, 90, 31, 0.12);
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .btn {
+      display: inline-block;
+      border: none;
+      background: linear-gradient(135deg, #ff5a1f, #ff8c42);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(255, 90, 31, 0.28);
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 12px 24px rgba(255, 90, 31, 0.38);
+    }
+
+    .support-list {
+      margin-top: 10px;
+    }
+
+    .support-item {
+      background: linear-gradient(135deg, #fff8f4, #fff2eb);
+      border: 1px solid #ffe1d3;
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 15px;
+      transition: 0.3s ease;
+    }
+
+    .support-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    }
+
+    .support-item strong {
+      display: block;
+      color: #222;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .support-item span,
+    .support-item a {
+      color: #666;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+
+    .support-item a {
+      color: #ff5a1f;
+      font-weight: 700;
+    }
+
+    .support-item a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 70px;
+      background: #1f1f1f;
+      color: white;
+      text-align: center;
+      padding: 26px 20px;
+      font-size: 16px;
+    }
+
+    .footer span {
+      color: #ff9f1c;
+      font-weight: 700;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links a {
+        margin: 0 10px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .hero-content p {
+        font-size: 17px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .contact-form-box,
+      .support-box {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">FoodWala</div>
+    <nav class="nav-links">
+      <a href="/">Home</a> 
+      <a href="/MenuButton">Menu</a>
+       <a href="/AboutPage">About</a> 
+       <a href="/ContactPage">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Contact FoodWala</h1>
+      <p>
+        We are here to help restaurants grow and customers enjoy their favorite meals with ease.
+        Reach out to our team for support, partnerships, or general inquiries.
+      </p>
+    </div>
+  </section>
+
+  <div class="container">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-subtitle">
+      Have a question, need support, or want to partner with FoodWala Private Limited?
+      Our team is always ready to assist you.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h3>Call Us</h3>
+        <p>Speak with our support team for quick assistance.</p>
+        <p><a href="tel:18001234567">1800-123-4567</a></p>
+        <p>Toll-Free | Mon - Sat | 9:00 AM - 8:00 PM</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <h3>Email Us</h3>
+        <p>Send us your query and we will get back to you soon.</p>
+        <p><a href="mailto:support@foodwala.com">support@foodwala.com</a></p>
+        <p><a href="mailto:partners@foodwala.com">partners@foodwala.com</a></p>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <h3>Office Address</h3>
+        <p>FoodWala Private Limited</p>
+        <p>2nd Floor, Sunrise Business Hub, Jaipur, Rajasthan, India</p>
+        <p><a href="#">View Location</a></p>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon">💬</div>
+        <h3>Live Support</h3>
+        <p>Need help with an order or restaurant listing?</p>
+        <p><a href="#">Start Live Chat</a></p>
+        <p>Fast response for customers and restaurant partners.</p>
+      </div>
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="contact-form-box">
+        <h2>Send Us a Message</h2>
+        <p>
+          Fill out the form below and our team will contact you as soon as possible.
+        </p>
+
+        <form>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email address" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" placeholder="Enter your phone number" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" placeholder="Write your message here..."></textarea>
+          </div>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+
+      <div class="support-box">
+        <h2>Customer Support</h2>
+        <p>
+          Whether you are a food lover, restaurant owner, or delivery partner, we are here to support you.
+        </p>
+
+        <div class="support-list">
+          <div class="support-item">
+            <strong>General Support</strong>
+            <a href="mailto:support@foodwala.com">support@foodwala.com</a>
+          </div>
+
+          <div class="support-item">
+            <strong>Restaurant Partnerships</strong>
+            <a href="mailto:partners@foodwala.com">partners@foodwala.com</a>
+          </div>
+
+          <div class="support-item">
+            <strong>Toll-Free Helpline</strong>
+            <a href="tel:18001234567">1800-123-4567</a>
+          </div>
+
+          <div class="support-item">
+            <strong>Working Hours</strong>
+            <span>Monday to Saturday, 9:00 AM to 8:00 PM</span>
+          </div>
+
+          <div class="support-item">
+            <strong>Business Inquiries</strong>
+            <span>For collaborations, onboarding, and service-related discussions, connect with our partnership team.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 <span>FoodWala Private Limited</span>. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foodies</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fff7f0, #ffe7d4, #fffdfb);
+      color: #333;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Header */
+    .header {
+      width: 92%;
+      max-width: 1300px;
+      margin: 20px auto 0;
+      padding: 18px 30px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 12px;
+      z-index: 1000;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff5a1f, #ff9f43);
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      box-shadow: 0 8px 18px rgba(255, 90, 31, 0.30);
+    }
+
+    .brand h1 {
+      color: #ff4d4d;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #333;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: linear-gradient(135deg, #ff5a1f, #ff8a3d);
+      color: white;
+      box-shadow: 0 8px 18px rgba(255, 90, 31, 0.22);
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      width: 92%;
+      max-width: 1300px;
+      margin: 28px auto 0;
+      min-height: 320px;
+      border-radius: 30px;
+      padding: 70px 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.35)),
+        url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 820px;
+      color: white;
+      animation: fadeUp 0.9s ease;
+    }
+
+    .hero-content h2 {
+      font-size: 50px;
+      margin-bottom: 16px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      line-height: 1.8;
+      opacity: 0.95;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    /* Section Heading */
+    .section-heading {
+      width: 92%;
+      max-width: 1300px;
+      margin: 45px auto 20px;
+      text-align: center;
+    }
+
+    .section-heading h3 {
+      font-size: 34px;
+      color: #222;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      font-size: 17px;
+      color: #666;
+    }
+
+    /* Food grid */
+    #foodList {
+      width: 92%;
+      max-width: 1300px;
+      margin: 35px auto 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+      gap: 28px;
+    }
+
+    /* Card */
+    .food-card {
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.7);
+    }
+
+    .food-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.16);
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .content {
+      padding: 22px 20px 20px;
+    }
+
+    .content h3 {
+      font-size: 24px;
+      color: #1f1f1f;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .restaurant {
+      color: #ff6b00;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .category {
+      color: #777;
+      font-size: 15px;
+      margin-bottom: 18px;
+      background: #fff3eb;
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 20px;
+    }
+
+    .price-order {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .price-btn {
+      background: linear-gradient(135deg, #ff512f, #dd2476);
+      color: white;
+      border: none;
+      padding: 11px 18px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(221, 36, 118, 0.25);
+      cursor: default;
+    }
+
+    .order-btn {
+      text-decoration: none;
+      background: linear-gradient(135deg, #00b894, #55efc4);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: 0.3s ease;
+      box-shadow: 0 8px 18px rgba(0, 184, 148, 0.22);
+      display: inline-block;
+    }
+
+    .order-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 22px rgba(0, 184, 148, 0.35);
+    }
+
+    /* Loading / Error */
+    .status-message {
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      color: #555;
+      padding: 40px 0;
+      background: rgba(255,255,255,0.7);
+      border-radius: 20px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    }
+
+    /* Footer */
+    footer {
+      width: 92%;
+      max-width: 1300px;
+      margin: 0 auto 20px;
+      background: #1f1f1f;
+      color: #fff;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 16px;
+      border-radius: 22px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.10);
+    }
+
+    footer span {
+      color: #ff7b54;
+      font-weight: bold;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .header {
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px 20px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero-content h2 {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 280px;
+        padding: 50px 20px;
+      }
+
+      .hero-content h2 {
+        font-size: 30px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .brand h1 {
+        font-size: 26px;
+      }
+
+      nav a {
+        padding: 9px 14px;
+        font-size: 14px;
+      }
+
+      .food-card img {
+        height: 210px;
+      }
+
+      .section-heading h3 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="brand">
+      <div class="brand-logo">F</div>
+      <h1>FoodWala</h1>
+    </div>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/MenuButton">Menu</a>
+      <a href="/AboutPage">About</a>
+      <a href="/ContactPage">Contact</a>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Delicious Food Delivered With Style</h2>
+      <p>
+        Discover mouth-watering dishes from top restaurants near you. Fresh flavors,
+        fast delivery, and a premium food experience — all in one place.
+      </p>
+    </div>
+  </section>
+
+  <div class="section-heading">
+    <h3>Popular Dishes</h3>
+    <p>Choose your favorite meal and enjoy a tasty experience from trusted restaurants.</p>
+  </div>
+
+  <div id="foodList">
+    <p class="status-message">Loading delicious food items...</p>
+  </div>
+
+  <script>
+    fetch('/all')
+      .then(res => {
+        if (!res.ok) {
+          throw new Error("HTTP error " + res.status);
+        }
+        return res.json();
+      })
+      .then(data => {
+        console.log("API DATA:", data);
+
+        const foodList = document.getElementById("foodList");
+        foodList.innerHTML = "";
+
+        if (!data || data.length === 0) {
+          foodList.innerHTML = `<p class="status-message">No food items available.</p>`;
+          return;
+        }
+
+        data.forEach(item => {
+          foodList.innerHTML += `
+            <div class="food-card">
+              <img src="${item.image}" alt="${item.name}">
+              <div class="content">
+                <h3>${item.name}</h3>
+                <p class="restaurant">${item.restaurantsName}</p>
+                <p class="category">${item.category}</p>
+                <div class="price-order">
+                  <button class="price-btn">₹ ${item.MRP}</button>
+                  <a href="/userDetails" class="order-btn">Order Now</a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      })
+      .catch(err => {
+        console.error("FETCH ERROR:", err);
+        document.getElementById("foodList").innerHTML = `
+          <p class="status-message">Failed to load food items. Please check API or backend server.</p>
+        `;
+      });
+  </script>
+
+  <footer>
+    <p>© 2026 <span>FoodWala</span>. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
