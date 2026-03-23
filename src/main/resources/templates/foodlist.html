@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <title>Foodies | Online Food Website</title>
@@ -18,307 +18,192 @@
 body {
     background:
         linear-gradient(rgba(255,255,255,0.85), rgba(255,245,240,0.9)),
-        url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80")
-        center/cover fixed;
-    color: #333;
+        url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1400&q=80")
+        no-repeat center center fixed;
+    background-size: cover;
 }
 
 /* Header */
 header {
     width: 92%;
-    max-width: 1300px;
-    margin: 18px auto 0;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(14px);
-    border: 1px solid rgba(255,255,255,0.5);
-    border-radius: 22px;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.08);
-    padding: 16px 28px;
+    margin: 20px auto;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 12px;
-    z-index: 1000;
 }
 
-.logo-box {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff6a00, #ff3c3c);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    font-weight: 700;
-    box-shadow: 0 8px 18px rgba(255, 90, 50, 0.3);
-}
-
-header h1 {
+.logo {
+    font-size: 24px;
+    font-weight: bold;
     color: #ff4d4d;
-    font-size: 28px;
-    font-weight: 800;
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-nav {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
 }
 
 nav a {
-    color: #333;
+    margin: 0 10px;
     text-decoration: none;
+    color: #333;
     font-weight: 600;
-    padding: 10px 16px;
-    border-radius: 25px;
-    transition: 0.3s ease;
 }
 
 nav a:hover {
-    background: linear-gradient(135deg, #ff6a00, #ff3c3c);
-    color: white;
-}
-
-.login-btn {
-    background: linear-gradient(135deg, #333, #111);
-    color: white;
-    border: none;
-    padding: 11px 22px;
-    border-radius: 28px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.login-btn:hover {
-    transform: translateY(-2px);
+    color: #ff4d4d;
 }
 
 /* Hero */
 .hero {
     width: 92%;
-    max-width: 1300px;
-    margin: 26px auto 0;
-    min-height: 470px;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
-    gap: 30px;
-    padding: 55px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,240,235,0.95));
-    border-radius: 30px;
+    margin: 20px auto;
+    padding: 40px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 20px;
+    text-align: center;
 }
 
-.hero-text h2 {
-    font-size: 52px;
-    color: #1f1f1f;
+.hero h2 {
+    font-size: 36px;
 }
 
-.hero-text p {
+.hero p {
     color: #666;
+    margin: 10px 0;
 }
 
-.primary-btn {
-    background: linear-gradient(135deg, #ff6a00, #ff3c3c);
-    color: white;
+/* Food Section */
+.food-section {
+    width: 92%;
+    margin: 30px auto;
 }
 
-.secondary-btn {
+.food-section h2 {
+    margin-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.food-card {
     background: white;
-    color: #333;
-}
-
-/* Hero Image */
-.hero-image img {
-    width: 100%;
-    max-width: 480px;
-    border-radius: 28px;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     transition: 0.3s;
 }
 
-.hero-image img:hover {
-    transform: scale(1.04);
-}
-
-/* Cards */
-.food-card {
-    background: rgba(255,255,255,0.95);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: 0.35s;
-}
-
 .food-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-5px);
+}
+
+.food-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.content {
+    padding: 15px;
 }
 
 .price {
-    background: linear-gradient(135deg, #ff512f, #ff9966);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ff4d4d;
+    font-weight: bold;
 }
 
 .order-btn {
-    background: linear-gradient(135deg, #00c9a7, #00b894);
+    background: #00b894;
     color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-decoration: none;
 }
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
-}
-
-/* Popup */
-.modal-content {
-    border-radius: 24px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background: #222;
+    color: white;
 }
 </style>
-
 </head>
+
 <body>
 
 <header>
-    <div class="logo-box">
-        <div class="logo-icon">F</div>
-        <h1>Foodies</h1>
-    </div>
-
-    <div class="navbar-right">
-        <nav>
-            <a href="/">Home</a>
-            <a href="/MenuButton">Menu</a>
-            <a href="/AboutPage">About</a>
-            <a href="/ContactPage">Contact</a>
-        </nav>
-
-        <button class="login-btn" onclick="openLoginPopup()">Login</button>
-    </div>
+    <div class="logo">Foodies</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">About</a>
+    </nav>
 </header>
 
 <section class="hero">
-    <div class="hero-text">
-        <h2>Delicious Food Delivered Fast</h2>
-        <p>
-            Order your favourite meals from the best restaurants near you.
-            Fresh ingredients, quick delivery, and a taste you will always remember.
-        </p>
-
-        <div class="hero-btns">
-            <a href="/" class="primary-btn">Order Now</a>
-            <a href="/MenuButton" class="secondary-btn">Explore Menu</a>
-        </div>
-    </div>
-
-    <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=900&q=80" alt="Food">
-    </div>
+    <h2>स्वादिष्ट खाना आपके घर तक</h2>
+    <p>अपने पसंदीदा रेस्टोरेंट से खाना ऑर्डर करें</p>
 </section>
 
 <section class="food-section">
     <h2>Popular Dishes</h2>
-    <p class="subtext">Choose from a variety of delicious dishes prepared by top restaurants.</p>
-    <div class="grid" id="foodList">
-        <p class="status-message">Loading delicious food items...</p>
-    </div>
+    <div class="grid" id="foodList"></div>
 </section>
 
-<!-- Login Popup -->
-<div class="modal" id="loginModal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeLoginPopup()">&times;</span>
-        <h2>Login As</h2>
-        <p>Select your portal to continue your journey with Foodies.</p>
-
-        <div class="login-options">
-        
-            <!-- Change these links later 
-            <a href="/userDetails" class="login-option-btn user-login">User Login</a>-->
-            
-            <a href="/loginn" class="login-option-btn restaurant-login">Restaurant Login</a>
-        </div>
-    </div>
-</div>
+<footer>
+    <p>© 2026 Foodies. All Rights Reserved.</p>
+</footer>
 
 <script>
-fetch('/all')
-  .then(res => {
-      if (!res.ok) {
-          throw new Error("HTTP error " + res.status);
-      }
-      return res.json();
-  })
-  .then(data => {
-      console.log("API DATA:", data);
-
-      const foodList = document.getElementById("foodList");
-      foodList.innerHTML = "";
-
-      if (!data || data.length === 0) {
-          foodList.innerHTML = `<p class="status-message">No food items available.</p>`;
-          return;
-      }
-
-      data.forEach(item => {
-          foodList.innerHTML += `
-            <div class="food-card">
-                <img src="${item.image}" alt="${item.name}">
-                <div class="content">
-                    <h3>${item.name}</h3>
-                    <p class="restaurant-name">${item.restaurantsName}</p>
-                    <p class="category-tag">${item.category}</p>
-                    <div class="card-footer">
-                        <span class="price">₹ ${item.MRP}</span>
-                        <a href="/userDetails" class="order-btn">Order Now</a>
-                    </div>
-                </div>
-            </div>
-          `;
-      });
-  })
-  .catch(err => {
-      console.error("FETCH ERROR:", err);
-      document.getElementById("foodList").innerHTML = `
-        <p class="status-message">Failed to load food items. Please check API or backend server.</p>
-      `;
-  });
-
-function openLoginPopup() {
-    document.getElementById("loginModal").style.display = "flex";
-}
-
-function closeLoginPopup() {
-    document.getElementById("loginModal").style.display = "none";
-}
-
-window.onclick = function(event) {
-    const modal = document.getElementById("loginModal");
-    if (event.target === modal) {
-        modal.style.display = "none";
+// Demo Data (अगर backend नहीं है तो ये चलेगा)
+const data = [
+    {
+        name: "Coffee",
+        restaurantsName: "Saini Restaurant",
+        category: "Drink",
+        MRP: 99,
+        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+    },
+    {
+        name: "Paav Bhaji",
+        restaurantsName: "Haritawal Kitchen",
+        category: "Food",
+        MRP: 129,
+        image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d"
+    },
+    {
+        name: "Burger",
+        restaurantsName: "Fast Food Hub",
+        category: "Fast Food",
+        MRP: 149,
+        image: "https://images.unsplash.com/photo-1550547660-d9450f859349"
     }
-}
-</script>
+];
 
-<footer>
-    <p>© 2026 <span>Foodies</span>. All Rights Reserved.</p>
-</footer>
+// Render Cards
+const foodList = document.getElementById("foodList");
+
+data.forEach(item => {
+    foodList.innerHTML += `
+        <div class="food-card">
+            <img src="${item.image}" alt="${item.name}">
+            <div class="content">
+                <h3>${item.name}</h3>
+                <p>${item.restaurantsName}</p>
+                <p>${item.category}</p>
+                <p class="price">₹ ${item.MRP}</p>
+                <a href="#" class="order-btn">Order Now</a>
+            </div>
+        </div>
+    `;
+});
+</script>
 
 </body>
 </html>
