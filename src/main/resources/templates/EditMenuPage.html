@@ -21,56 +21,59 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+
+    /* ✅ Updated Premium Background */
     background:
-    linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.70)),
-    url("https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1400&q=80")
+    linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.75)),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80")
     no-repeat center center/cover;
 }
 
 .container {
     width: 100%;
-    max-width: 500px;
-    padding: 35px 30px;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-radius: 24px;
+    max-width: 520px;
+    padding: 38px 32px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 26px;
     border: 1px solid rgba(255,255,255,0.25);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+    box-shadow: 0 25px 55px rgba(0,0,0,0.45);
     text-align: center;
 }
 
 .restaurant-name {
     color: #fff;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
 }
 
 .subtitle {
-    color: #f1f1f1;
+    color: #eaeaea;
     font-size: 14px;
-    margin-bottom: 24px;
-    opacity: 0.95;
+    margin-bottom: 26px;
+    opacity: 0.9;
 }
 
 .container h2 {
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     font-size: 28px;
     font-weight: 600;
 }
 
 .input-box {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     position: relative;
 }
 
 .input-box input,
 .input-box select {
     width: 100%;
-    padding: 13px 15px;
-    border-radius: 12px;
+    padding: 14px 16px;
+    border-radius: 14px;
     border: none;
     outline: none;
     font-size: 14px;
@@ -80,8 +83,6 @@ body {
 
 .input-box select {
     appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     cursor: pointer;
 }
 
@@ -93,20 +94,19 @@ body {
     transform: translateY(-50%);
     font-size: 12px;
     color: #555;
-    pointer-events: none;
 }
 
 .file-box {
     margin-top: 10px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     text-align: left;
 }
 
 .file-box label {
     color: #fff;
     font-size: 14px;
-    display: block;
     margin-bottom: 8px;
+    display: block;
     font-weight: 500;
 }
 
@@ -116,31 +116,30 @@ body {
     border-radius: 12px;
     border: 2px dashed rgba(255,255,255,0.6);
     background: rgba(255,255,255,0.92);
-    color: #333;
     cursor: pointer;
 }
 
 .preview-box {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     text-align: left;
 }
 
 .preview-box label {
     color: #fff;
-    display: block;
     margin-bottom: 8px;
+    display: block;
     font-size: 14px;
     font-weight: 500;
 }
 
 .preview-img {
     width: 100%;
-    max-width: 180px;
-    height: 120px;
+    max-width: 190px;
+    height: 130px;
     object-fit: cover;
-    border-radius: 14px;
+    border-radius: 16px;
     border: 2px solid rgba(255,255,255,0.5);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.20);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
 
 .button-group {
@@ -152,21 +151,18 @@ body {
 .update-btn,
 .cancel-btn {
     flex: 1;
-    text-decoration: none;
-    text-align: center;
     padding: 14px;
-    border: none;
     border-radius: 30px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
+    border: none;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .update-btn {
     background: linear-gradient(135deg, #00b894, #00cec9);
     color: white;
-    box-shadow: 0 10px 20px rgba(0,184,148,0.3);
 }
 
 .update-btn:hover {
@@ -176,7 +172,10 @@ body {
 .cancel-btn {
     background: linear-gradient(135deg, #636e72, #2d3436);
     color: white;
-    box-shadow: 0 10px 20px rgba(45,52,54,0.28);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cancel-btn:hover {
@@ -184,10 +183,9 @@ body {
 }
 
 .note {
-    color: #efefef;
+    color: #ddd;
     font-size: 13px;
-    margin-top: 15px;
-    opacity: 0.9;
+    margin-top: 16px;
 }
 
 @media (max-width: 500px) {
@@ -213,18 +211,15 @@ body {
 
 <div class="container">
 
-    <div class="restaurant-name">My Restaurant 🍽️</div>
-    <!-- Dynamic:
-    <div class="restaurant-name" th:text="${restaurantName}"></div>
-    -->
+    <!-- Updated Text -->
+    <div class="restaurant-name">Foodies Hub 🍴</div>
 
-    <p class="subtitle">Update your dish details and keep your menu fresh.</p>
+    <p class="subtitle">Update your dishes and keep your menu fresh & appealing.</p>
 
-    <h2>Edit Menu Item</h2>
+    <h2>Edit Dish Details</h2>
 
     <form th:action="@{/updateMenu}" th:object="${menu}" method="post" enctype="multipart/form-data">
 
-        <!-- Hidden id -->
         <input type="hidden" th:field="*{id}">
 
         <div class="input-box">
@@ -246,24 +241,38 @@ body {
         </div>
 
         <div class="preview-box">
-            <label>Current Food Image</label>
-            <img th:src="@{${menu.image}}" alt="Current Food Image" class="preview-img">
+            <label>Current Dish Image</label>
+            <img th:src="@{${menu.image}}" alt="Food Image" class="preview-img">
         </div>
 
         <div class="file-box">
-            <label for="imageFile">Change Food Image</label>
+            <label for="imageFile">Upload New Image</label>
             <input type="file" id="imageFile" name="imageFile" accept="image/*">
         </div>
 
         <div class="button-group">
-            <button type="submit" class="update-btn">Update Menu Item</button>
+            <button type="submit" class="update-btn">Update Dish</button>
             <a href="/EditMenuPage" class="cancel-btn">Cancel</a>
         </div>
     </form>
 
-    <p class="note">Keep your menu updated for a better customer experience.</p>
+    <p class="note">Keep your menu updated to attract more customers.</p>
 
 </div>
+
+<!-- Live Preview Script -->
+<script>
+document.getElementById("imageFile").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.querySelector(".preview-img").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+</script>
 
 </body>
 </html>

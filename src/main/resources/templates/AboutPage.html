@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us - FoodWala Private Limited</title>
+  <title>About Us - Foodies Private Limited</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Segoe UI", sans-serif;
+      font-family: "Poppins", sans-serif;
     }
 
     body {
-      background: linear-gradient(135deg, #fff8f0, #ffe9d6);
-      color: #222;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+      url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80")
+      no-repeat center center/cover;
+      color: #fff;
     }
 
     /* Navbar */
@@ -24,8 +26,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 18px 60px;
-      background: white;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
       position: sticky;
       top: 0;
     }
@@ -33,19 +36,19 @@
     .logo {
       font-size: 28px;
       font-weight: bold;
-      color: #ff5722;
+      color: #00cec9;
     }
 
     .nav-links a {
       margin-left: 25px;
       text-decoration: none;
-      color: #333;
-      font-weight: 600;
+      color: #fff;
+      font-weight: 500;
       transition: 0.3s;
     }
 
     .nav-links a:hover {
-      color: #ff5722;
+      color: #00cec9;
     }
 
     /* Hero Section */
@@ -56,19 +59,19 @@
       justify-content: center;
       text-align: center;
       color: white;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-      url("https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+      padding: 20px;
     }
 
     .hero h1 {
-      font-size: 50px;
+      font-size: 48px;
       margin-bottom: 15px;
     }
 
     .hero p {
-      font-size: 20px;
+      font-size: 18px;
       max-width: 700px;
       margin: auto;
+      opacity: 0.9;
     }
 
     /* Container */
@@ -80,37 +83,44 @@
 
     .section-title {
       text-align: center;
-      font-size: 36px;
+      font-size: 34px;
       margin-bottom: 10px;
     }
 
     .section-subtitle {
       text-align: center;
-      color: #666;
+      color: #ccc;
       margin-bottom: 40px;
     }
 
-    /* About Box */
+    /* Glass Boxes */
+    .about-box,
+    .card,
+    .vision-box {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
     .about-box {
-      background: white;
       padding: 35px;
-      border-radius: 20px;
       margin-bottom: 30px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
 
     .about-box h2 {
-      color: #ff5722;
+      color: #00cec9;
       margin-bottom: 15px;
     }
 
     .about-box p {
       margin-bottom: 12px;
-      color: #444;
+      color: #ddd;
     }
 
     .highlight {
-      color: #ff5722;
+      color: #00cec9;
       font-weight: bold;
     }
 
@@ -123,11 +133,8 @@
     }
 
     .card {
-      background: white;
       padding: 25px;
-      border-radius: 18px;
       text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
       transition: 0.3s;
     }
 
@@ -137,14 +144,14 @@
 
     .card h3 {
       margin-bottom: 10px;
-      color: #ff5722;
+      color: #00cec9;
     }
 
     .card p {
-      color: #666;
+      color: #ccc;
     }
 
-    /* Vision Section */
+    /* Vision */
     .vision {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -153,28 +160,26 @@
     }
 
     .vision-box {
-      background: white;
       padding: 30px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
 
     .vision-box h3 {
-      color: #ff5722;
+      color: #00cec9;
       margin-bottom: 10px;
     }
 
     /* Footer */
     footer {
-      background: #222;
+      background: rgba(0,0,0,0.8);
       color: white;
       text-align: center;
       padding: 20px;
       margin-top: 50px;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
 
     footer span {
-      color: #ff5722;
+      color: #00cec9;
       font-weight: bold;
     }
 
@@ -182,10 +187,11 @@
     @media(max-width:768px){
       .navbar {
         flex-direction: column;
+        gap: 10px;
       }
 
       .hero h1 {
-        font-size: 32px;
+        font-size: 30px;
       }
     }
   </style>
@@ -195,7 +201,7 @@
 
   <!-- Navbar -->
   <div class="navbar">
-    <div class="logo">FoodWala</div>
+    <div class="logo">Foodies</div>
     <div class="nav-links">
       <a href="/">Home</a>
       <a href="#">Restaurants</a>
@@ -206,9 +212,9 @@
   <!-- Hero -->
   <div class="hero">
     <div>
-      <h1>About FoodWala Private Limited</h1>
+      <h1>About Foodies Private Limited</h1>
       <p>
-        A platform that connects restaurants and food lovers — delivering taste, convenience, and happiness anywhere, anytime.
+        A modern platform connecting restaurants and food lovers — delivering taste, convenience, and happiness anytime, anywhere.
       </p>
     </div>
   </div>
@@ -218,43 +224,43 @@
 
     <h2 class="section-title">Who We Are</h2>
     <p class="section-subtitle">
-      FoodWala Private Limited is a modern online food platform connecting restaurants and customers.
+      Foodies Private Limited is a smart digital platform connecting restaurants and customers seamlessly.
     </p>
 
     <div class="about-box">
-      <h2>About Our Company</h2>
+      <h2>About Our Platform</h2>
       <p>
-        <span class="highlight">FoodWala Private Limited</span> is a powerful digital platform where 
-        <span class="highlight">multiple restaurants</span> list their food items, menus, and services.
+        <span class="highlight">Foodies Private Limited</span> is a powerful platform where 
+        <span class="highlight">multiple restaurants</span> showcase their menus and services.
       </p>
       <p>
-        At the same time, <span class="highlight">multiple users</span> visit our platform, explore different restaurants, place orders, and enjoy delicious food.
+        At the same time, <span class="highlight">users</span> explore restaurants, place orders, and enjoy delicious food effortlessly.
       </p>
       <p>
-        Our goal is to provide a seamless experience where users can easily order food from anywhere and enjoy quality meals.
+        Our mission is to deliver a smooth and enjoyable food ordering experience for everyone.
       </p>
     </div>
 
     <!-- Cards -->
     <div class="cards">
       <div class="card">
-        <h3>Multiple Restaurants</h3>
-        <p>Restaurants can showcase their menu and reach more customers online.</p>
+        <h3>Restaurant Network</h3>
+        <p>Restaurants can expand their reach and attract more customers online.</p>
       </div>
 
       <div class="card">
-        <h3>Multiple Users</h3>
-        <p>Thousands of users can explore and order their favorite food easily.</p>
+        <h3>Customer Access</h3>
+        <p>Users can explore and order their favorite meals with ease.</p>
       </div>
 
       <div class="card">
-        <h3>Order Anywhere</h3>
-        <p>You can order food from anywhere at any time with just a few clicks.</p>
+        <h3>Order Anytime</h3>
+        <p>Enjoy food ordering from anywhere at any time.</p>
       </div>
 
       <div class="card">
         <h3>Fast Experience</h3>
-        <p>Quick, smooth, and user-friendly food ordering experience.</p>
+        <p>Smooth, quick, and user-friendly ordering process.</p>
       </div>
     </div>
 
@@ -263,14 +269,14 @@
       <div class="vision-box">
         <h3>Our Mission</h3>
         <p>
-          To provide a fast, easy, and reliable platform where people can discover and order food effortlessly.
+          To build a reliable platform that makes food discovery and ordering fast, simple, and enjoyable.
         </p>
       </div>
 
       <div class="vision-box">
         <h3>Our Vision</h3>
         <p>
-          To connect every restaurant with customers digitally and make food ordering simple and enjoyable.
+          To digitally connect every restaurant with customers and redefine the food ordering experience.
         </p>
       </div>
     </div>
@@ -279,7 +285,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 <span>FoodWala Private Limited</span>. All Rights Reserved.</p>
+    <p>© 2026 <span>Foodies Private Limited</span>. All Rights Reserved.</p>
   </footer>
 
 </body>

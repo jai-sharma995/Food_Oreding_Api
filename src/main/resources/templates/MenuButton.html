@@ -1,383 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foodies</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Foodies</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", Arial, sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    body {
-      background: linear-gradient(135deg, #fff7f0, #ffe7d4, #fffdfb);
-      color: #333;
-      min-height: 100vh;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    a {
-      text-decoration: none;
-    }
+body {
+  background: linear-gradient(135deg, #fff5ee, #ffe0cc, #fffdfb);
+  color: #333;
+}
 
-    /* Header */
-    .header {
-      width: 92%;
-      max-width: 1300px;
-      margin: 20px auto 0;
-      padding: 18px 30px;
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      border-radius: 22px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 12px;
-      z-index: 1000;
-    }
+/* HEADER */
+.header {
+  width: 92%;
+  max-width: 1300px;
+  margin: 20px auto 0;
+  padding: 18px 30px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(18px);
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 10px;
+  z-index: 1000;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+.brand-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#ff512f,#dd2476);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-weight:700;
+  font-size:22px;
+}
 
-    .brand-logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ff5a1f, #ff9f43);
-      color: white;
-      font-size: 22px;
-      font-weight: bold;
-      box-shadow: 0 8px 18px rgba(255, 90, 31, 0.30);
-    }
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
-    .brand h1 {
-      color: #ff4d4d;
-      font-size: 30px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-    }
+/* 🔥 UPDATED FOODIES LOGO */
+.brand h1 {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 1px;
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+  background: linear-gradient(135deg, #ff7a18, #ff3c3c, #ff00cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-    nav a {
-      color: #333;
-      font-size: 15px;
-      font-weight: 600;
-      padding: 10px 18px;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-    }
+  text-shadow: 
+    0 0 10px rgba(255, 120, 80, 0.4),
+    0 0 20px rgba(255, 60, 60, 0.3);
 
-    nav a:hover {
-      background: linear-gradient(135deg, #ff5a1f, #ff8a3d);
-      color: white;
-      box-shadow: 0 8px 18px rgba(255, 90, 31, 0.22);
-      transform: translateY(-2px);
-    }
+  transition: 0.3s ease;
+}
 
-    /* Hero */
-    .hero {
-      width: 92%;
-      max-width: 1300px;
-      margin: 28px auto 0;
-      min-height: 320px;
-      border-radius: 30px;
-      padding: 70px 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.35)),
-        url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
-      overflow: hidden;
-    }
+.brand h1:hover {
+  transform: scale(1.05);
+  text-shadow: 
+    0 0 15px rgba(255, 120, 80, 0.6),
+    0 0 30px rgba(255, 60, 60, 0.5);
+}
 
-    .hero-content {
-      max-width: 820px;
-      color: white;
-      animation: fadeUp 0.9s ease;
-    }
+/* NAV */
+nav a {
+  padding:10px 18px;
+  border-radius:30px;
+  font-weight:600;
+  color:#333;
+  transition:0.3s;
+}
 
-    .hero-content h2 {
-      font-size: 50px;
-      margin-bottom: 16px;
-      font-weight: 800;
-      line-height: 1.2;
-    }
+nav a:hover {
+  background:linear-gradient(135deg,#ff512f,#ff9966);
+  color:white;
+  transform:translateY(-2px);
+}
 
-    .hero-content p {
-      font-size: 18px;
-      line-height: 1.8;
-      opacity: 0.95;
-      max-width: 720px;
-      margin: auto;
-    }
+/* HERO */
+.hero {
+  width:92%;
+  max-width:1300px;
+  margin:30px auto;
+  border-radius:30px;
+  overflow:hidden;
+  position:relative;
+}
 
-    /* Section Heading */
-    .section-heading {
-      width: 92%;
-      max-width: 1300px;
-      margin: 45px auto 20px;
-      text-align: center;
-    }
+.hero::before {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.35));
+}
 
-    .section-heading h3 {
-      font-size: 34px;
-      color: #222;
-      margin-bottom: 8px;
-      font-weight: 800;
-    }
+.hero img {
+  width:100%;
+  height:420px;
+  object-fit:cover;
+}
 
-    .section-heading p {
-      font-size: 17px;
-      color: #666;
-    }
+.hero-content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  color:white;
+  text-align:center;
+  max-width:700px;
+}
 
-    /* Food grid */
-    #foodList {
-      width: 92%;
-      max-width: 1300px;
-      margin: 35px auto 50px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-      gap: 28px;
-    }
+.hero-content h2 {
+  font-size:48px;
+  font-weight:800;
+  margin-bottom:15px;
+}
 
-    /* Card */
-    .food-card {
-      background: rgba(255, 255, 255, 0.88);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-      position: relative;
-      border: 1px solid rgba(255,255,255,0.7);
-    }
+.hero-content p {
+  font-size:18px;
+  line-height:1.7;
+}
 
-    .food-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.16);
-    }
+/* SECTION */
+.section-heading {
+  text-align:center;
+  margin-top:30px;
+}
 
-    .food-card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      display: block;
-    }
+.section-heading h3 {
+  font-size:34px;
+  font-weight:800;
+}
 
-    .content {
-      padding: 22px 20px 20px;
-    }
+.section-heading p {
+  color:#666;
+}
 
-    .content h3 {
-      font-size: 24px;
-      color: #1f1f1f;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
+/* GRID */
+#foodList {
+  width:92%;
+  max-width:1300px;
+  margin:30px auto 50px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
 
-    .restaurant {
-      color: #ff6b00;
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 7px;
-    }
+/* CARD */
+.food-card {
+  border-radius:25px;
+  overflow:hidden;
+  background:white;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  transition:0.4s;
+}
 
-    .category {
-      color: #777;
-      font-size: 15px;
-      margin-bottom: 18px;
-      background: #fff3eb;
-      display: inline-block;
-      padding: 7px 14px;
-      border-radius: 20px;
-    }
+.food-card:hover {
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:0 20px 50px rgba(0,0,0,0.2);
+}
 
-    .price-order {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
+/* IMAGE EFFECT */
+.food-card img {
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  transition:0.5s;
+}
 
-    .price-btn {
-      background: linear-gradient(135deg, #ff512f, #dd2476);
-      color: white;
-      border: none;
-      padding: 11px 18px;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: 700;
-      box-shadow: 0 8px 18px rgba(221, 36, 118, 0.25);
-      cursor: default;
-    }
+.food-card:hover img {
+  transform:scale(1.1);
+}
 
-    .order-btn {
-      text-decoration: none;
-      background: linear-gradient(135deg, #00b894, #55efc4);
-      color: white;
-      padding: 12px 22px;
-      border-radius: 30px;
-      font-weight: 700;
-      transition: 0.3s ease;
-      box-shadow: 0 8px 18px rgba(0, 184, 148, 0.22);
-      display: inline-block;
-    }
+/* CONTENT */
+.content {
+  padding:20px;
+}
 
-    .order-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 22px rgba(0, 184, 148, 0.35);
-    }
+.content h3 {
+  font-size:22px;
+  font-weight:700;
+}
 
-    /* Loading / Error */
-    .status-message {
-      width: 100%;
-      text-align: center;
-      font-size: 20px;
-      color: #555;
-      padding: 40px 0;
-      background: rgba(255,255,255,0.7);
-      border-radius: 20px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
-    }
+.restaurant {
+  color:#ff512f;
+  font-weight:600;
+  margin:5px 0;
+}
 
-    /* Footer */
-    footer {
-      width: 92%;
-      max-width: 1300px;
-      margin: 0 auto 20px;
-      background: #1f1f1f;
-      color: #fff;
-      text-align: center;
-      padding: 24px 20px;
-      font-size: 16px;
-      border-radius: 22px;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.10);
-    }
+.category {
+  display:inline-block;
+  background:#ffece5;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:14px;
+  margin-bottom:15px;
+}
 
-    footer span {
-      color: #ff7b54;
-      font-weight: bold;
-    }
+/* PRICE + BTN */
+.price-order {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.price-btn {
+  background:linear-gradient(135deg,#ff512f,#dd2476);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  border-radius:20px;
+  font-weight:700;
+}
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .header {
-        flex-direction: column;
-        gap: 18px;
-        padding: 18px 20px;
-      }
+.order-btn {
+  background:linear-gradient(135deg,#00b894,#55efc4);
+  padding:10px 18px;
+  border-radius:25px;
+  color:white;
+  font-weight:700;
+  transition:0.3s;
+}
 
-      nav {
-        justify-content: center;
-      }
+.order-btn:hover {
+  transform:scale(1.1);
+}
 
-      .hero-content h2 {
-        font-size: 38px;
-      }
-    }
+/* FOOTER */
+footer {
+  width:92%;
+  max-width:1300px;
+  margin:auto;
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:25px;
+  border-radius:20px;
+}
 
-    @media (max-width: 768px) {
-      .hero {
-        min-height: 280px;
-        padding: 50px 20px;
-      }
+footer span {
+  color:#ff512f;
+}
 
-      .hero-content h2 {
-        font-size: 30px;
-      }
+/* LOADING */
+.status-message {
+  text-align:center;
+  padding:40px;
+  font-size:18px;
+}
 
-      .hero-content p {
-        font-size: 16px;
-      }
-
-      .brand h1 {
-        font-size: 26px;
-      }
-
-      nav a {
-        padding: 9px 14px;
-        font-size: 14px;
-      }
-
-      .food-card img {
-        height: 210px;
-      }
-
-      .section-heading h3 {
-        font-size: 28px;
-      }
-    }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <div class="header">
-    <div class="brand">
-      <div class="brand-logo">F</div>
-      <h1>FoodWala</h1>
-    </div>
-
-    <nav>
-      <a href="/">Home</a>
-      <a href="/MenuButton">Menu</a>
-      <a href="/AboutPage">About</a>
-      <a href="/ContactPage">Contact</a>
-    </nav>
+<div class="header">
+  <div class="brand">
+    <div class="brand-logo">F</div>
+    <h1>Foodies</h1>
   </div>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Delicious Food Delivered With Style</h2>
-      <p>
-        Discover mouth-watering dishes from top restaurants near you. Fresh flavors,
-        fast delivery, and a premium food experience — all in one place.
-      </p>
-    </div>
-  </section>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/MenuButton">Menu</a>
+    <a href="/AboutPage">About</a>
+    <a href="/ContactPage">Contact</a>
+  </nav>
+</div>
 
-  <div class="section-heading">
-    <h3>Popular Dishes</h3>
-    <p>Choose your favorite meal and enjoy a tasty experience from trusted restaurants.</p>
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80">
+  <div class="hero-content">
+    <h2>Experience Food Like Never Before</h2>
+    <p>Order from the best restaurants near you with fast delivery, premium quality, and unforgettable taste.</p>
   </div>
+</section>
 
-  <div id="foodList">
-    <p class="status-message">Loading delicious food items...</p>
-  </div>
+<div class="section-heading">
+  <h3>Popular Dishes</h3>
+  <p>Explore trending meals loved by food lovers</p>
+</div>
+
+<div id="foodList">
+  <p class="status-message">Loading delicious food items...</p>
+</div>
 
   <script>
     fetch('/all')
@@ -424,7 +350,7 @@
   </script>
 
   <footer>
-    <p>© 2026 <span>FoodWala</span>. All Rights Reserved.</p>
+    <p>© 2026 <span>Foodies</span>. All Rights Reserved.</p>
   </footer>
 
 </body>
