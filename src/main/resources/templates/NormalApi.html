@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Foodies | Online Food Website</title>
+<title>Hungry Souls | Online Food Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,14 +15,22 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Chef Cooking Background */
 body {
-    background: #f8f9fa;
+    background: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d') no-repeat center center/cover;
+    background-attachment: fixed;
     color: #333;
+}
+
+/* Overlay */
+.overlay {
+    background: rgba(0,0,0,0.6);
+    min-height: 100vh;
 }
 
 /* Navbar */
 header {
-    background: #ff4d4d;
+    background: rgba(0,0,0,0.8);
     padding: 15px 60px;
     display: flex;
     justify-content: space-between;
@@ -30,8 +38,8 @@ header {
 }
 
 header h1 {
-    color: #fff;
-    font-size: 26px;
+    color: #ffcc00;
+    font-size: 28px;
 }
 
 nav a {
@@ -39,6 +47,11 @@ nav a {
     margin-left: 25px;
     text-decoration: none;
     font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc00;
 }
 
 /* Section */
@@ -49,28 +62,28 @@ nav a {
 .food-section h2 {
     text-align: center;
     margin-bottom: 40px;
-    font-size: 32px;
+    font-size: 34px;
+    color: #fff;
 }
 
-/* GRID (IMPORTANT FIX) */
+/* Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* CARD */
+/* Card */
 .food-card {
-    background: #fff;
-    border-radius: 14px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
 }
 
 .food-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    transform: translateY(-8px) scale(1.02);
 }
 
 .food-card img {
@@ -79,55 +92,51 @@ nav a {
     object-fit: cover;
 }
 
-/* CONTENT */
+/* Content */
 .food-card .content {
-    padding: 16px;
+    padding: 18px;
 }
 
 .food-card h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 4px;
 }
 
 .food-card p {
     font-size: 14px;
     color: #666;
-    margin-bottom: 6px;
 }
 
-/* PRICE + BUTTON */
+/* Footer of card */
 .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 14px;
+    margin-top: 15px;
 }
 
 .price {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff4d4d;
 }
 
 .order-btn {
     padding: 8px 18px;
-    background-color: #ff4d4d;
+    background: linear-gradient(to right, #ff4d4d, #ff9966);
     color: #fff;
-    font-size: 14px;
-    font-weight: 500;
     text-decoration: none;
-    border-radius: 6px;
-    transition: background 0.3s ease;
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
 .order-btn:hover {
-    background-color: #e63e3e;
+    transform: scale(1.05);
 }
 
 /* Footer */
 footer {
-    background: #222;
+    background: rgba(0,0,0,0.85);
     color: #ccc;
     padding: 25px;
     text-align: center;
@@ -135,15 +144,17 @@ footer {
 }
 
 footer span {
-    color: #ff4d4d;
+    color: #ffcc00;
 }
 </style>
 </head>
 
 <body>
 
+<div class="overlay">
+
 <header>
-    <h1>Foodies</h1>
+    <h1>Hungry Souls</h1>
     <nav>
         <a href="#">Home</a>
         <a href="http://localhost:8080/Buttonmenu">Menu</a>
@@ -188,8 +199,10 @@ fetch('http://localhost:8080/all')
 </script>
 
 <footer>
-    <p>© 2026 <span>Foodies</span>. All Rights Reserved.</p>
+    <p>© 2026 <span>Hungry Souls</span>. All Rights Reserved.</p>
 </footer>
+
+</div>
 
 </body>
 </html>
