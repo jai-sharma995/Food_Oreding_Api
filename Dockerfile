@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 # Build
-=======
->>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe
 FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 COPY . .
