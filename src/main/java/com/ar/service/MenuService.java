@@ -29,6 +29,7 @@ public class MenuService {
 	public List<Menu> getAllMenu() {
         return menuRepo.findAll();
     }
+<<<<<<< HEAD
 	
 	public Menu Update(Menu menu){
 		return menuRepo.save(menu);
@@ -41,6 +42,8 @@ public class MenuService {
 	public void delete(int id) {
 		menuRepo.deleteById(id);
 	}
+=======
+>>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe
 
 
 }

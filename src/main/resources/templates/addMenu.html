@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -363,3 +364,68 @@ window.history.back();
 
 </body>
 </html>
+=======
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Menu</title>
+    <style>
+        body { font-family: Arial; background: #f4f6f9; }
+        .box {
+            width: 400px;
+            margin: 60px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        input, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        button {
+            background: green;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Add Menu Item</h2>
+    
+    
+    
+    
+    
+    
+    
+
+    <form th:action="@{/addMenu}"
+      th:object="${menu}"
+      method="post"
+      enctype="multipart/form-data">
+
+    <input type="text" th:field="*{name}" placeholder="Food Name" required>
+
+    <input type="text" th:field="*{category}" placeholder="Category" required>
+
+    <input type="number" th:field="*{MRP}" placeholder="MRP" required>
+
+    <label>Featured Image</label>
+    <input type="file"
+           name="imageFile"
+           accept="image/*"
+           style="border:1px dashed #aaa; padding:10px;">
+
+    <button type="submit">Save Menu</button>
+</form>
+
+</div>
+
+</body>
+</html>
+>>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe

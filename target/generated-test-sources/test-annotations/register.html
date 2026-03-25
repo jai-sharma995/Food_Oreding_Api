@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User Details Register</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+
+        /* Clear Food Delivery Background */
+        background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') no-repeat center center/cover;
+        height: 100vh;
+    }
+
+    /* Center container (NO blur overlay) */
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Card with slight transparency */
+    .card {
+        width: 380px;
+        padding: 30px;
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.75); /* only card dark */
+        box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+        text-align: center;
+        color: white;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #ff7a18;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        background: rgba(255,255,255,0.15);
+        color: white;
+        outline: none;
+    }
+
+    input::placeholder {
+        color: #ddd;
+    }
+
+    input:focus {
+        border: 1px solid #ff7a18;
+        box-shadow: 0 0 6px #ff7a18;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        border: none;
+        border-radius: 8px;
+        background: linear-gradient(to right, #ff7a18, #ffb347);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+
+    .tagline {
+        font-size: 12px;
+        color: #ccc;
+        margin-bottom: 10px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>🍔 Food Delivery Register</h2>
+        <div class="tagline">Fast delivery • Fresh food • Easy signup</div>
+
+        <form th:action="@{/userDetails}" th:object="${details}" method="post">
+
+            <input type="text" th:field="*{Username}"
+                   placeholder="Enter Name" required>
+
+            <input type="text" th:field="*{Mobileno}"
+                   placeholder="Enter Mobile No" required>
+
+            <input type="text" th:field="*{Address}"
+                   placeholder="Enter Address" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

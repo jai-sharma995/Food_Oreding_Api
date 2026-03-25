@@ -37,6 +37,7 @@
     <version>5.5.13.3</version>
 </dependency>
 
+<<<<<<< HEAD
 	<dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
@@ -47,6 +48,9 @@
     <artifactId>cloudinary-http44</artifactId>
     <version>1.39.0</version>
 </dependency>
+=======
+	
+>>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe
 	
 	
 		<dependency>
@@ -88,6 +92,17 @@
 			<artifactId>spring-boot-starter-thymeleaf-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
+=======
+		
+		
+		<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+</dependency>
+
+		
+>>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>

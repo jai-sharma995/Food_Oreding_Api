@@ -2,11 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>Hungry Souls | Online Food Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+=======
+<title> Hungry Souls | Online Food Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+>>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe
 	rel="stylesheet">
 
 <style>
@@ -17,6 +26,7 @@
 	font-family: 'Poppins', sans-serif;
 }
 
+<<<<<<< HEAD
 /* 🔥 FIRE BACKGROUND */
 body {
 	background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
@@ -112,6 +122,45 @@ nav a:hover {
 	border-radius: 20px;
 	border: 1px solid rgba(255, 120, 0, 0.6);
 	box-shadow: 0 0 20px #ff6a00;
+=======
+body {
+	background: #f8f9fa;
+	color: #333;
+}
+
+/* Navbar */
+header {
+	background: #ff4d4d;
+	padding: 15px 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header h1 {
+	color: #fff;
+	font-size: 26px;
+}
+
+nav a {
+	color: #fff;
+	margin-left: 25px;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 60px;
+	background: #fff3f3;
+>>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe
 }
 
 .hero-text {
@@ -119,6 +168,7 @@ nav a:hover {
 }
 
 .hero-text h2 {
+<<<<<<< HEAD
 	font-size: 38px;
 	color: #ff8c00;
 	text-shadow: 0 0 15px red;
@@ -370,3 +420,198 @@ Order Now
 
 </body>
 </html>
+=======
+	font-size: 42px;
+	margin-bottom: 15px;
+}
+
+.hero-text p {
+	font-size: 16px;
+	margin-bottom: 25px;
+	color: #555;
+}
+
+.hero-text button {
+	padding: 12px 28px;
+	background: #ff4d4d;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.hero img {
+	width: 420px;
+}
+
+/* Section */
+.food-section {
+    padding: 60px;
+}
+
+.food-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+/* GRID (IMPORTANT FIX) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.food-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.food-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.food-card .content {
+    padding: 16px;
+}
+
+.food-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.food-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+/* PRICE + BUTTON */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.order-btn {
+    padding: 8px 18px;
+    background-color: #ff4d4d;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #e63e3e;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #ccc;
+    padding: 25px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer span {
+    color: #ff4d4d;
+}
+</style>
+</head>
+<body>
+
+	<header>
+		<h1>Foodies</h1>
+		<nav>
+			<a href="#">Home</a> <a href="http://localhost:8080/Buttonmenu">Menu</a> <a href="#">About</a> <a
+				href="#">Contact</a>
+		</nav>
+	</header>
+
+	<section class="hero">
+		<div class="hero-text">
+			<h2>Delicious Food Delivered Fast</h2>
+			<p>Order your favourite meals from the best restaurants near you.</p>
+			 <a href="http://localhost:8080/Buttonmenu" class="order-btn">
+                    Order Now
+                </a>
+		</div>
+		<img
+			src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+			alt="Food">
+	</section>
+
+	<section class="food-section">
+		<h2>Popular Dishes</h2>
+
+		<div class="grid" id="foodList"></div>
+	</section>
+
+	<script>
+fetch('/all')
+  .then(res => {
+      if (!res.ok) {
+          throw new Error("HTTP error " + res.status);
+      }
+      return res.json();
+  })
+  .then(data => {
+      console.log("API DATA:", data);
+
+      const foodList = document.getElementById("foodList");
+      foodList.innerHTML = "";
+
+      data.forEach(item => {
+          foodList.innerHTML += `
+            <div class="food-card">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="content">
+                    <h3>${item.name}</h3>
+                    <p>${item.restaurantsName}</p>
+                    <p>${item.category}</p>
+                    <button>₹ ${item.MRP}</button>
+                    <a href="/userDetails" class="order-btn">
+                    Order Now
+                </a>
+                </div>
+            </div>
+          `;
+      });
+  })
+  .catch(err => console.error("FETCH ERROR:", err));
+</script>
+
+	<footer>
+		<p>
+			© 2026 <span>Foodies</span>. All Rights Reserved.
+		</p>
+	</footer>
+
+</body>
+</html>
+>>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe

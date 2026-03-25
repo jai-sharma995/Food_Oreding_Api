@@ -42,7 +42,11 @@ public class UserController {
 	@PostMapping("/userDetails")
 	public String addUser(@ModelAttribute UserDetails details) {
 		userDetaileSerview.saveDetails(details);
+<<<<<<< HEAD
 		return "userDetailsLogin";
+=======
+		return "foodlist";
+>>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe
 		
 	}
 	

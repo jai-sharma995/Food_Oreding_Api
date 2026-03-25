@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Order Alert</title>
+
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #ff9800, #ff5722);
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: #ff5722;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ffe0b2;
+            transform: scale(1.05);
+        }
+
+        /* SweetAlert Custom Style */
+        .swal2-popup {
+            border-radius: 15px !important;
+        }
+
+        .swal2-title {
+            color: #ff5722 !important;
+        }
+
+        .swal2-confirm {
+            background-color: #ff9800 !important;
+            border-radius: 8px !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<button onclick="orderPlaced()">Place Order 🍔</button>
+
+<script>
+function orderPlaced() {
+    Swal.fire({
+        title: 'Order Placed!',
+        text: 'Your delicious food is on the way 🍔🚚',
+        icon: 'success',
+        confirmButtonText: 'OK',
+        showClass: {
+            popup: 'animate__animated animate__zoomIn'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__zoomOut'
+        }
+    });
+}
+</script>
+
+</body>
+</html>
+

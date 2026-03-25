@@ -13,6 +13,7 @@ public class UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+<<<<<<< HEAD
 	private String username;
     private String password;
     private String mobileno;
@@ -57,6 +58,36 @@ public class UserDetails {
     public void setAddress(String address) {
         this.address = address;
     }
+=======
+	private String Username;
+	private Double Mobileno;
+	private String Address;
+	
+	public String getAddress() {
+		return Address;
+	}
+	public void setAddress(String address) {
+		Address = address;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getUsername() {
+		return Username;
+	}
+	public void setUsername(String username) {
+		Username = username;
+	}
+	public Double getMobileno() {
+		return Mobileno;
+	}
+	public void setMobileno(Double mobileno) {
+		Mobileno = mobileno;
+	}
+>>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe
 	
 	
 	

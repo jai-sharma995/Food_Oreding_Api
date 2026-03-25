@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
@@ -186,5 +187,113 @@ function goBack() {
 }
 </script>
 
+=======
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User Details Register</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+
+        /* Restaurant Background */
+        background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4') no-repeat center center/cover;
+        height: 100vh;
+    }
+
+    /* Glass dark overlay */
+    .overlay {
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        width: 360px;
+        padding: 35px;
+        border-radius: 18px;
+        background: rgba(20, 20, 20, 0.9);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        text-align: center;
+        color: white;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+        color: #f39c12;
+        letter-spacing: 1px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin: 12px 0;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        font-size: 14px;
+        background: #2c2c2c;
+        color: white;
+        transition: 0.3s;
+    }
+
+    input::placeholder {
+        color: #aaa;
+    }
+
+    input:focus {
+        background: #3a3a3a;
+        box-shadow: 0 0 8px #f39c12;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        border: none;
+        border-radius: 8px;
+        background: #f39c12;
+        color: black;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ffb347;
+        transform: scale(1.05);
+    }
+</style>
+
+</head>
+<body>
+
+<div class="overlay">
+    <div class="card">
+        <h2>🍴 Restaurant Registration</h2>
+
+        <form th:action="@{/userDetails}" th:object="${details}" method="post">
+
+            <input type="text" th:field="*{Username}"
+                   placeholder="Enter Name" required>
+
+            <input type="text" th:field="*{Mobileno}"
+                   placeholder="Enter Mobile No" required>
+
+            <input type="text" th:field="*{Address}"
+                   placeholder="Enter Address" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+
+>>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe
 </body>
 </html>

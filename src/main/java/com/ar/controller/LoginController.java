@@ -43,11 +43,16 @@ public class LoginController {
             restaurant.getRestaurantName()
         );
 
+<<<<<<< HEAD
         return "redirect:/list";
     }
     
     
     
     
+=======
+        return "redirect:/add";
+    }
+>>>>>>> 38d640902c8213dfea6914a0f0a1282d67d549fe
 }
 
