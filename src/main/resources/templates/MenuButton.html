@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Foodies</title>
+<title>Hungry Soul</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -15,109 +15,74 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* DARK BACKGROUND */
 body {
-  background: linear-gradient(135deg, #fff5ee, #ffe0cc, #fffdfb);
-  color: #333;
+  background: #0f0f0f;
+  color: #fff;
 }
 
 /* HEADER */
 .header {
-  width: 92%;
-  max-width: 1300px;
-  margin: 20px auto 0;
-  padding: 18px 30px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(18px);
-  border-radius: 25px;
+  width: 95%;
+  margin: 20px auto;
+  padding: 18px 25px;
+  background: #1a1a1a;
+  border-radius: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 10px;
-  z-index: 1000;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-}
-
-.brand-logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg,#ff512f,#dd2476);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  font-weight:700;
-  font-size:22px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
 
 .brand {
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
 }
 
-/* 🔥 UPDATED FOODIES LOGO */
+.brand-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#ff512f,#ff00cc);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+
 .brand h1 {
-  font-size: 32px;
-  font-weight: 900;
-  letter-spacing: 1px;
-
-  background: linear-gradient(135deg, #ff7a18, #ff3c3c, #ff00cc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow: 
-    0 0 10px rgba(255, 120, 80, 0.4),
-    0 0 20px rgba(255, 60, 60, 0.3);
-
-  transition: 0.3s ease;
-}
-
-.brand h1:hover {
-  transform: scale(1.05);
-  text-shadow: 
-    0 0 15px rgba(255, 120, 80, 0.6),
-    0 0 30px rgba(255, 60, 60, 0.5);
+  font-size: 26px;
+  color: #ff4d4d;
 }
 
 /* NAV */
 nav a {
-  padding:10px 18px;
-  border-radius:30px;
-  font-weight:600;
-  color:#333;
-  transition:0.3s;
+  color: #ccc;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  background:linear-gradient(135deg,#ff512f,#ff9966);
-  color:white;
-  transform:translateY(-2px);
+  color: #ff4d4d;
 }
 
 /* HERO */
 .hero {
-  width:92%;
-  max-width:1300px;
-  margin:30px auto;
-  border-radius:30px;
+  width:95%;
+  margin:25px auto;
+  border-radius:20px;
   overflow:hidden;
   position:relative;
 }
 
-.hero::before {
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.35));
-}
-
 .hero img {
   width:100%;
-  height:420px;
+  height:400px;
   object-fit:cover;
+  filter: brightness(60%);
 }
 
 .hero-content {
@@ -125,20 +90,16 @@ nav a:hover {
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  color:white;
   text-align:center;
-  max-width:700px;
 }
 
 .hero-content h2 {
-  font-size:48px;
-  font-weight:800;
-  margin-bottom:15px;
+  font-size:42px;
+  color:#fff;
 }
 
 .hero-content p {
-  font-size:18px;
-  line-height:1.7;
+  color:#ddd;
 }
 
 /* SECTION */
@@ -148,125 +109,106 @@ nav a:hover {
 }
 
 .section-heading h3 {
-  font-size:34px;
-  font-weight:800;
-}
-
-.section-heading p {
-  color:#666;
+  font-size:30px;
+  color:#ff4d4d;
 }
 
 /* GRID */
 #foodList {
-  width:92%;
-  max-width:1300px;
-  margin:30px auto 50px;
+  width:95%;
+  margin:30px auto;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
 }
 
 /* CARD */
 .food-card {
-  border-radius:25px;
+  background:#1a1a1a;
+  border-radius:18px;
   overflow:hidden;
-  background:white;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
-  transition:0.4s;
+  transition:0.3s;
+  box-shadow:0 6px 20px rgba(0,0,0,0.6);
 }
 
 .food-card:hover {
-  transform:translateY(-12px) scale(1.02);
-  box-shadow:0 20px 50px rgba(0,0,0,0.2);
+  transform:translateY(-8px);
 }
 
-/* IMAGE EFFECT */
+/* IMAGE */
 .food-card img {
   width:100%;
-  height:230px;
+  height:200px;
   object-fit:cover;
-  transition:0.5s;
-}
-
-.food-card:hover img {
-  transform:scale(1.1);
 }
 
 /* CONTENT */
 .content {
-  padding:20px;
+  padding:18px;
 }
 
 .content h3 {
-  font-size:22px;
-  font-weight:700;
+  font-size:20px;
 }
 
 .restaurant {
-  color:#ff512f;
-  font-weight:600;
+  color:#ff4d4d;
   margin:5px 0;
 }
 
 .category {
   display:inline-block;
-  background:#ffece5;
-  padding:6px 14px;
-  border-radius:20px;
-  font-size:14px;
-  margin-bottom:15px;
+  background:#333;
+  padding:5px 10px;
+  border-radius:15px;
+  font-size:12px;
 }
 
-/* PRICE + BTN */
+/* PRICE + BUTTON */
 .price-order {
   display:flex;
   justify-content:space-between;
   align-items:center;
+  margin-top:10px;
 }
 
 .price-btn {
-  background:linear-gradient(135deg,#ff512f,#dd2476);
+  background:#ff4d4d;
   color:white;
+  padding:8px 12px;
+  border-radius:8px;
   border:none;
-  padding:10px 16px;
-  border-radius:20px;
-  font-weight:700;
 }
 
 .order-btn {
-  background:linear-gradient(135deg,#00b894,#55efc4);
-  padding:10px 18px;
-  border-radius:25px;
+  background:#00c853;
+  padding:8px 14px;
+  border-radius:20px;
+  text-decoration:none;
   color:white;
-  font-weight:700;
-  transition:0.3s;
-}
-
-.order-btn:hover {
-  transform:scale(1.1);
+  font-size:13px;
 }
 
 /* FOOTER */
 footer {
-  width:92%;
-  max-width:1300px;
-  margin:auto;
-  background:#111;
-  color:white;
+  width:95%;
+  margin:30px auto;
+  background:#1a1a1a;
   text-align:center;
-  padding:25px;
-  border-radius:20px;
+  padding:20px;
+  border-radius:15px;
+  color:#ccc;
 }
 
 footer span {
-  color:#ff512f;
+  color:#ff4d4d;
 }
 
-/* LOADING */
+/* STATUS */
 .status-message {
   text-align:center;
   padding:40px;
-  font-size:18px;
+  color:#aaa;
 }
 
 </style>
@@ -289,10 +231,10 @@ footer span {
 </div>
 
 <section class="hero">
-  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80">
+  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
   <div class="hero-content">
     <h2>Experience Food Like Never Before</h2>
-    <p>Order from the best restaurants near you with fast delivery, premium quality, and unforgettable taste.</p>
+    <p>Order from the best restaurants near you with fast delivery.</p>
   </div>
 </section>
 
@@ -305,53 +247,36 @@ footer span {
   <p class="status-message">Loading delicious food items...</p>
 </div>
 
-  <script>
-    fetch('/all')
-      .then(res => {
-        if (!res.ok) {
-          throw new Error("HTTP error " + res.status);
-        }
-        return res.json();
-      })
-      .then(data => {
-        console.log("API DATA:", data);
+<script>
+fetch('/all')
+.then(res => res.json())
+.then(data => {
 
-        const foodList = document.getElementById("foodList");
-        foodList.innerHTML = "";
+    const foodList = document.getElementById("foodList");
+    foodList.innerHTML = "";
 
-        if (!data || data.length === 0) {
-          foodList.innerHTML = `<p class="status-message">No food items available.</p>`;
-          return;
-        }
-
-        data.forEach(item => {
-          foodList.innerHTML += `
-            <div class="food-card">
-              <img src="${item.image}" alt="${item.name}">
-              <div class="content">
+    data.forEach(item => {
+        foodList.innerHTML += `
+        <div class="food-card">
+            <img src="${item.image}">
+            <div class="content">
                 <h3>${item.name}</h3>
                 <p class="restaurant">${item.restaurantsName}</p>
                 <p class="category">${item.category}</p>
-                <div class="price-order">
-                  <button class="price-btn">₹ ${item.MRP}</button>
-                  <a href="/userDetails" class="order-btn">Order Now</a>
-                </div>
-              </div>
-            </div>
-          `;
-        });
-      })
-      .catch(err => {
-        console.error("FETCH ERROR:", err);
-        document.getElementById("foodList").innerHTML = `
-          <p class="status-message">Failed to load food items. Please check API or backend server.</p>
-        `;
-      });
-  </script>
 
-  <footer>
-    <p>© 2026 <span>Hungry Souls</span>. All Rights Reserved.</p>
-  </footer>
+                <div class="price-order">
+                    <button class="price-btn">₹ ${item.MRP}</button>
+                    <a href="/userDetails" class="order-btn">Order</a>
+                </div>
+            </div>
+        </div>`;
+    });
+});
+</script>
+
+<footer>
+  <p>© 2026 <span>Hungry Souls</span></p>
+</footer>
 
 </body>
 </html>

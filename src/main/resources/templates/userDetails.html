@@ -5,7 +5,7 @@
 <title>User Register | Hungry Souls</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -15,45 +15,38 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Background */
 body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.70)),
-    url("https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=1400&q=80")
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("https://images.unsplash.com/photo-1550547660-d9450f859349")
     no-repeat center center/cover;
 }
 
 /* Container */
 .container {
     width: 100%;
-    max-width: 430px;
-    padding: 40px 30px;
-
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    border-radius: 22px;
-    border: 1px solid rgba(255,255,255,0.25);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+    max-width: 420px;
+    padding: 35px 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
     text-align: center;
-
-    /* 🔥 Added */
     position: relative;
 }
 
-/* 🔥 CLOSE BUTTON */
+/* Close Button */
 .close-btn {
     position: absolute;
-    top: 18px;
-    right: 20px;
-    font-size: 22px;
-    color: #fff;
+    top: 15px;
+    right: 18px;
+    font-size: 20px;
+    color: #888;
     cursor: pointer;
-    font-weight: bold;
     transition: 0.3s;
 }
 
@@ -64,45 +57,49 @@ body {
 
 /* Title */
 .container h2 {
-    color: #fff;
-    font-size: 30px;
-    margin-bottom: 10px;
+    color: #ff4d4d;
+    font-size: 26px;
+    margin-bottom: 8px;
 }
 
 .subtitle {
-    color: #eee;
+    color: #666;
     font-size: 14px;
     margin-bottom: 25px;
 }
 
 /* Inputs */
 .input-box {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .input-box input {
     width: 100%;
-    padding: 14px 16px;
-    border-radius: 12px;
-    border: none;
+    padding: 13px 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
     outline: none;
-    font-size: 15px;
-    background: rgba(255,255,255,0.95);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 6px rgba(255,77,77,0.4);
 }
 
 /* Button */
 .signup-btn {
     width: 100%;
-    padding: 14px;
+    padding: 13px;
     border: none;
-    border-radius: 30px;
-    font-size: 16px;
+    border-radius: 10px;
+    font-size: 15px;
     font-weight: 600;
-    background: linear-gradient(135deg, #ff512f, #ff7b54);
+    background: linear-gradient(to right, #ff4d4d, #ff9966);
     color: white;
     cursor: pointer;
-    transition: 0.3s ease;
-    box-shadow: 0 10px 20px rgba(255,81,47,0.3);
+    transition: 0.3s;
 }
 
 .signup-btn:hover {
@@ -111,13 +108,13 @@ body {
 
 /* Login Link */
 .login-link {
-    margin-top: 20px;
+    margin-top: 18px;
     font-size: 14px;
-    color: #eee;
+    color: #555;
 }
 
 .login-link a {
-    color: #00cec9;
+    color: #ff4d4d;
     text-decoration: none;
     font-weight: 600;
 }
@@ -130,7 +127,7 @@ body {
 @media(max-width:500px){
     .container {
         margin: 0 15px;
-        padding: 30px 20px;
+        padding: 25px 20px;
     }
 }
 </style>
@@ -140,7 +137,7 @@ body {
 
 <div class="container">
 
-    <!-- 🔥 CLOSE BUTTON -->
+    <!-- Close Button -->
     <div class="close-btn" onclick="goBack()">✖</div>
 
     <h2>User Registration</h2>
@@ -184,7 +181,6 @@ body {
 </div>
 
 <script>
-// 🔥 CLOSE BUTTON FUNCTION
 function goBack() {
     window.history.back(); 
 }

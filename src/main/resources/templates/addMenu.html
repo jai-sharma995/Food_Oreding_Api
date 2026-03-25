@@ -3,253 +3,362 @@
 <head>
 <meta charset="UTF-8">
 <title>Add Menu | Hungry Souls</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80")
-    no-repeat center center/cover;
+body{
+
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+
+/* 🔥 FIRE + COOKING BACKGROUND */
+
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1400&q=80")
+no-repeat center center/cover;
+
 }
 
-.container {
-    width: 100%;
-    max-width: 460px;
-    padding: 35px 30px;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.25);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
-    text-align: center;
 
-    /* 🔥 Added */
-    position: relative;
+/* ================= CONTAINER ================= */
+
+.container{
+
+width:100%;
+max-width:470px;
+
+padding:35px 30px;
+
+background:rgba(255,255,255,0.12);
+
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
+
+border-radius:25px;
+
+border:1px solid rgba(255,120,0,0.6);
+
+box-shadow:
+0 0 25px rgba(255,120,0,0.6),
+0 0 60px rgba(255,80,0,0.4);
+
+text-align:center;
+
+position:relative;
+
 }
 
-/* 🔥 CLOSE BUTTON */
-.close-btn {
-    position: absolute;
-    top: 18px;
-    right: 20px;
-    font-size: 22px;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
+
+/* CLOSE BUTTON */
+
+.close-btn{
+
+position:absolute;
+top:18px;
+right:20px;
+font-size:22px;
+color:#fff;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+
 }
 
-.close-btn:hover {
-    color: #ff4d4d;
-    transform: scale(1.2);
+.close-btn:hover{
+
+color:#ff3c00;
+transform:scale(1.2) rotate(10deg);
+
 }
 
-.restaurant-name {
-    color: #fff;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
+
+/* TITLE */
+
+.restaurant-name{
+
+color:#ffb347;
+font-size:24px;
+font-weight:700;
+margin-bottom:6px;
+
 }
 
-.subtitle {
-    color: #f1f1f1;
-    font-size: 14px;
-    margin-bottom: 24px;
-    opacity: 0.95;
+.subtitle{
+
+color:#eee;
+font-size:14px;
+margin-bottom:24px;
+
 }
 
-.container h2 {
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 28px;
-    font-weight: 600;
+.container h2{
+
+color:white;
+margin-bottom:20px;
+font-size:28px;
+
 }
 
-.input-box {
-    margin-bottom: 16px;
-    position: relative;
+
+/* INPUT */
+
+.input-box{
+
+margin-bottom:16px;
+position:relative;
+
 }
 
 .input-box input,
-.input-box select {
-    width: 100%;
-    padding: 13px 15px;
-    border-radius: 12px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    background: rgba(255,255,255,0.95);
-    color: #333;
+.input-box select{
+
+width:100%;
+padding:13px 15px;
+
+border-radius:12px;
+border:none;
+outline:none;
+
+font-size:14px;
+
+background:rgba(255,255,255,0.95);
+color:#333;
+
+transition:0.3s;
+
 }
 
-.input-box input::placeholder {
-    color: #666;
+.input-box input:focus,
+.input-box select:focus{
+
+box-shadow:
+0 0 10px #ff6a00,
+0 0 20px #ff0000;
+
 }
 
-.input-box select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
+
+/* SELECT ARROW */
+
+.select-box::after{
+
+content:"▼";
+position:absolute;
+right:15px;
+top:50%;
+transform:translateY(-50%);
+font-size:12px;
+
 }
 
-.select-box::after {
-    content: "▼";
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #555;
-    pointer-events: none;
+
+/* FILE */
+
+.file-box{
+
+margin-top:10px;
+margin-bottom:18px;
+text-align:left;
+
 }
 
-.file-box {
-    margin-top: 10px;
-    margin-bottom: 18px;
-    text-align: left;
+.file-box label{
+
+color:white;
+font-size:14px;
+margin-bottom:8px;
+display:block;
+
 }
 
-.file-box label {
-    color: #fff;
-    font-size: 14px;
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
+.file-box input[type=file]{
+
+width:100%;
+padding:12px;
+
+border-radius:12px;
+
+border:2px dashed #ff6a00;
+
+background:rgba(255,255,255,0.9);
+
+cursor:pointer;
+
 }
 
-.file-box input[type="file"] {
-    width: 100%;
-    padding: 12px;
-    border-radius: 12px;
-    border: 2px dashed rgba(255,255,255,0.6);
-    background: rgba(255,255,255,0.92);
-    color: #333;
-    cursor: pointer;
+
+/* BUTTON */
+
+.submit-btn{
+
+width:100%;
+padding:14px;
+
+border:none;
+border-radius:30px;
+
+font-size:16px;
+font-weight:600;
+
+background:
+linear-gradient(135deg,#ff6a00,#ff0000,#ff9900);
+
+color:white;
+
+cursor:pointer;
+
+transition:0.3s;
+
+box-shadow:
+0 0 15px #ff6a00,
+0 0 25px #ff0000;
+
 }
 
-.submit-btn {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 600;
-    background: linear-gradient(135deg, #00b894, #00cec9);
-    color: white;
-    cursor: pointer;
-    transition: 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0,184,148,0.3);
+.submit-btn:hover{
+
+transform:translateY(-3px) scale(1.03);
+
+box-shadow:
+0 0 25px #ff0000,
+0 0 40px #ff6a00;
+
 }
 
-.submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 24px rgba(0,184,148,0.38);
+
+/* NOTE */
+
+.note{
+
+color:#ddd;
+font-size:13px;
+margin-top:15px;
+
 }
 
-.note {
-    color: #efefef;
-    font-size: 13px;
-    margin-top: 15px;
-    opacity: 0.9;
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+.container{
+padding:25px 18px;
 }
 
-@media (max-width: 500px) {
-    .container {
-        padding: 28px 20px;
-    }
-
-    .restaurant-name {
-        font-size: 20px;
-    }
-
-    .container h2 {
-        font-size: 24px;
-    }
+.container h2{
+font-size:24px;
 }
+
+.restaurant-name{
+font-size:20px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <!-- 🔥 CLOSE BUTTON -->
-    <div class="close-btn" onclick="goBack()">✖</div>
+<div class="close-btn" onclick="goBack()">✖</div>
 
-    <div class="restaurant-name">Hungry Souls Hub 🍴</div>
+<div class="restaurant-name">Hungry Souls Hub 🍴</div>
 
-    <div class="restaurant-name" th:text="${restaurantName}"></div> 
+<div class="restaurant-name" th:text="${restaurantName}"></div>
 
-    <p class="subtitle">Create and manage your menu with ease. Add dishes that delight your customers.</p>
+<p class="subtitle">
+Create and manage your menu with ease. Add dishes that delight your customers.
+</p>
 
-    <h2>Add New Dish</h2>
+<h2>Add New Dish</h2>
 
-    <form th:action="@{/addMenu}"
-          th:object="${menu}"
-          method="post"
-          enctype="multipart/form-data">
+<form
+th:action="@{/addMenu}"
+th:object="${menu}"
+method="post"
+enctype="multipart/form-data"
+>
 
-        <div class="input-box">
-            <input type="text"
-                   th:field="*{name}"
-                   placeholder="Food Name"
-                   required>
-        </div>
+<div class="input-box">
+<input
+type="text"
+th:field="*{name}"
+placeholder="Food Name"
+required>
+</div>
 
-        <div class="input-box select-box">
-            <select th:field="*{category}" required>
-                <option value="">Select Category</option>
-                <option value="Foods">Foods</option>
-                <option value="Drinks">Drinks</option>
-                <option value="Snacks">Snacks</option>
-                <option value="Sweets">Desert</option>
-            </select>
-        </div>
+<div class="input-box select-box">
 
-        <div class="input-box">
-            <input type="number"
-                   th:field="*{MRP}"
-                   placeholder="Price (₹)"
-                   required>
-        </div>
+<select th:field="*{category}" required>
 
-        <div class="file-box">
-            <label for="imageFile">Upload Food Image</label>
-            <input type="file"
-                   id="imageFile"
-                   name="imageFile"
-                   accept="image/*">
-        </div>
+<option value="">Select meal Category</option>
 
-        <button type="submit" class="submit-btn">Save Dish</button>
-    </form>
+<option value="Foods">Foods</option>
+<option value="Drinks">Drinks</option>
+<option value="Snacks">Snacks</option>
+<option value="Sweets">Desert</option>
 
-    <p class="note">A great menu creates a great first impression.</p>
+</select>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="number"
+th:field="*{MRP}"
+placeholder="Price (₹)"
+required>
+
+</div>
+
+<div class="file-box">
+
+<label>Upload Food Image</label>
+
+<input
+type="file"
+name="imageFile"
+accept="image/*">
+
+</div>
+
+<button type="submit" class="submit-btn">
+Save Dish
+</button>
+
+</form>
+
+<p class="note">
+A great menu creates a great first impression.
+</p>
 
 </div>
 
 <script>
-// 🔥 CLOSE BUTTON FUNCTION
+
 function goBack(){
-    window.history.back();
+window.history.back();
 }
+
 </script>
 
 </body>
